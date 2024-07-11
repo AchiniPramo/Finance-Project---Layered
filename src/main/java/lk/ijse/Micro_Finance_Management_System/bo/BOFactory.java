@@ -1,7 +1,6 @@
 package lk.ijse.Micro_Finance_Management_System.bo;
 
 import lk.ijse.Micro_Finance_Management_System.bo.custom.impl.*;
-import lk.ijse.Micro_Finance_Management_System.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;

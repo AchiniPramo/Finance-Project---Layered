@@ -1,7 +1,6 @@
 package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.UserDAO;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 import lk.ijse.Micro_Finance_Management_System.entity.User;
 import lk.ijse.Micro_Finance_Management_System.util.SQLUtil;
 

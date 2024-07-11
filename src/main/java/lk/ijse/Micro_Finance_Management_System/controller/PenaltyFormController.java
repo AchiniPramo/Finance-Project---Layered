@@ -65,12 +65,5 @@ public class PenaltyFormController {
         colLoanId.setCellValueFactory(new PropertyValueFactory<>("loanId"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         colDateApplied.setCellValueFactory(new PropertyValueFactory<>("dateApplied"));
-
     }
-
-    private static void showErrorAlert() {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Navigation Error");
-        alert.showAndWait();
-    }
-
 }

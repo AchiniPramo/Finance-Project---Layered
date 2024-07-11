@@ -38,10 +38,10 @@ public class ExpenseFormController {
     private static ExpenseFormController controller;
 
     private ExpenseBO expenseBO = (ExpenseBO) BOFactory.getBOFactory().getBOType(BOFactory.BOTypes.EXPENSE);
-    public ExpenseFormController(){
-
+    public ExpenseFormController() {
         controller=this;
     }
+
     public static ExpenseFormController getInstance(){
         return controller;
     }
@@ -77,15 +77,9 @@ public class ExpenseFormController {
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colEmployeeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
-
     }
 
     public void btnManageExpenseOnAction(ActionEvent event) {
         Navigation.navigateToManageExpensePage();
-    }
-
-    private static void showErrorAlert() {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Navigation Error");
-        alert.showAndWait();
     }
 }

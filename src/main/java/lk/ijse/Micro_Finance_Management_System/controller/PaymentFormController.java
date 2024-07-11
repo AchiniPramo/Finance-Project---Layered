@@ -1,7 +1,5 @@
 package lk.ijse.Micro_Finance_Management_System.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -37,12 +35,11 @@ public class PaymentFormController {
     private static PaymentFormController controller;
 
     private PaymentBO paymentBO = (PaymentBO) BOFactory.getBOFactory().getBOType(BOFactory.BOTypes.PAYMENT);
-    public PaymentFormController(){
-
+    public PaymentFormController() {
         controller=this;
     }
-    public static PaymentFormController getInstance(){
 
+    public static PaymentFormController getInstance() {
         return controller;
     }
 
@@ -68,7 +65,6 @@ public class PaymentFormController {
                         paymentDTO.getPaymentDate(),
                         paymentDTO.getLoanId(),
                         paymentDTO.getAmount()
-
                 ));
             }
         } catch (SQLException e) {

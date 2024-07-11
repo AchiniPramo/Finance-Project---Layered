@@ -1,7 +1,6 @@
 package lk.ijse.Micro_Finance_Management_System.dao;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.impl.*;
-import lk.ijse.Micro_Finance_Management_System.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;

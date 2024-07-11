@@ -83,7 +83,7 @@ public class EmployeeManageFormController {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-        } else{
+        } else {
             new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
         }
     }
@@ -117,23 +117,27 @@ public class EmployeeManageFormController {
         String contactNumber = txtContactNo.getText();
         String email = txtEmail.getText();
 
-        if (isValid()){
-        try {
-            boolean isUpdated = employeeBO.updateEmployee(new EmployeeDTO(
-                    employeeId,name,address,salary,contactNumber,email
+        if (isValid()) {
+            try {
+                boolean isUpdated = employeeBO.updateEmployee(new EmployeeDTO(
+                        employeeId,
+                        name,
+                        address,
+                        salary,
+                        contactNumber,
+                        email
             ));
-            if(isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Employee Update Successfully!").show();
-                clearFields();
-                EmployeeFormController.getInstance().initialize();
-
+                if(isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Employee Update Successfully!").show();
+                    clearFields();
+                    EmployeeFormController.getInstance().initialize();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
         }
-    } else{
-        new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
-    }
     }
 
     private void fillFields(EmployeeDTO employee) {
@@ -154,42 +158,36 @@ public class EmployeeManageFormController {
         txtEmail.setText("");
     }
 
-
     @FXML
     void txtAddressOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Address,txtAddress);
-
     }
 
     @FXML
     void txtContactNoOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Contact,txtContactNo);
-
     }
 
     @FXML
     void txtEmailOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Email,txtEmail);
-
     }
 
     @FXML
     void txtEmployeeIdOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Id,txtEmployeeId);
-
     }
 
     @FXML
     void txtEmployeeNameOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Name,txtName);
-
     }
 
     @FXML
     void txtSalaryOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Salary,txtSalary);
-
     }
+
     public boolean isValid() {
         boolean isIdValid = Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Id, txtEmployeeId);
         boolean isNameValid = Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Name, txtName);

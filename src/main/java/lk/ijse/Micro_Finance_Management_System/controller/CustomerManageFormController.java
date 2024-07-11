@@ -113,7 +113,11 @@ public class CustomerManageFormController {
         if(isValid()) {
             try {
                 boolean isUpdated = customerBO.updateCustomer(new CustomerDTO(
-                        customerId,name,address,email,mobileNo
+                        customerId,
+                        name,
+                        address,
+                        email,
+                        mobileNo
                 ));
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Customer Update Successfully!").show();
@@ -123,9 +127,9 @@ public class CustomerManageFormController {
             } catch (SQLException | ClassNotFoundException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-            } else{
-                new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
-            }
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
+        }
     }
 
     private void fillFields(CustomerDTO customer) {

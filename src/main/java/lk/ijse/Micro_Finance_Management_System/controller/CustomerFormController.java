@@ -38,11 +38,9 @@ public class CustomerFormController {
 
     private CustomerBO customerBO = (CustomerBO) BOFactory.getBOFactory().getBOType(BOFactory.BOTypes.CUSTOMER);
     public CustomerFormController(){
-
         controller=this;
     }
     public static CustomerFormController getInstance(){
-
         return controller;
     }
 

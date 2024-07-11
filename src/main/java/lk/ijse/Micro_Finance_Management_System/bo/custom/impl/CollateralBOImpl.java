@@ -4,9 +4,7 @@ import lk.ijse.Micro_Finance_Management_System.bo.custom.CollateralBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.CollateralDAO;
 import lk.ijse.Micro_Finance_Management_System.dto.CollateralDTO;
-import lk.ijse.Micro_Finance_Management_System.dto.CustomerDTO;
 import lk.ijse.Micro_Finance_Management_System.entity.Collateral;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

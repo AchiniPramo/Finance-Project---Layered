@@ -2,11 +2,8 @@ package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.bo.custom.EmployeeBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;
-import lk.ijse.Micro_Finance_Management_System.dao.custom.CustomerDAO;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.EmployeeDAO;
-import lk.ijse.Micro_Finance_Management_System.dto.CustomerDTO;
 import lk.ijse.Micro_Finance_Management_System.dto.EmployeeDTO;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 import lk.ijse.Micro_Finance_Management_System.entity.Employee;
 
 import java.sql.SQLException;

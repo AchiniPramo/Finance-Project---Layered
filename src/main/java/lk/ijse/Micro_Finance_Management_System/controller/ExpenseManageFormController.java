@@ -55,7 +55,7 @@ public class ExpenseManageFormController {
                     clearFields();
                     ExpenseFormController.getInstance().initialize();
                 }
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "Expense Not Found!").show();
                 clearFields();
             }
@@ -71,22 +71,26 @@ public class ExpenseManageFormController {
         String employeeId = cmbEmployeeId.getValue();
         double amount = Double.parseDouble(txtAmount.getText());
 
-        if (isValid()){
-        try {
-            boolean isSaved = expenseBO.saveExpense(new ExpenseDTO(
-                    cmbExpenseId.getVisibleRowCount(), type,date,employeeId,amount
-            ));
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Expense Saved Successfully!").show();
-                clearFields();
-                ExpenseFormController.getInstance().initialize();
+        if (isValid()) {
+            try {
+                boolean isSaved = expenseBO.saveExpense(new ExpenseDTO(
+                        cmbExpenseId.getVisibleRowCount(),
+                        type,
+                        date,
+                        employeeId,
+                        amount
+                ));
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Expense Saved Successfully!").show();
+                    clearFields();
+                    ExpenseFormController.getInstance().initialize();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
         }
-    } else{
-        new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
-    }
     }
 
     @FXML
@@ -126,7 +130,7 @@ public class ExpenseManageFormController {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-        } else{
+        } else {
             new Alert(Alert.AlertType.ERROR, "Invalid input Detected. Please check!").show();
         }
     }
@@ -175,19 +179,16 @@ public class ExpenseManageFormController {
     @FXML
     void txtAmountOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Salary,txtAmount);
-
     }
 
     @FXML
     void txtTypeOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Name,txtType);
-
     }
 
     @FXML
     void txtDateOnKeyReleased(KeyEvent event) {
         Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Date,dtpDate.getEditor());
-
     }
     public boolean isValid(){
         boolean isTypeValid = Regex.setTextColor(lk.ijse.Micro_Finance_Management_System.util.TextField.Name, txtType);

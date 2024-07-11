@@ -30,7 +30,7 @@ public class PaymentDAOImpl implements PaymentDAO {
     @Override
     public boolean save(Payment entity) throws SQLException, ClassNotFoundException {
         try {
-            TransactionUtil.startTransaction(); // Start transaction
+            TransactionUtil.startTransaction();
 
             // Insert Payment table
             String insertPaymentSQL = "INSERT INTO Payment (Payment_Date, Loan_Id, Amount) VALUES (?, ?, ?)";

@@ -1,8 +1,6 @@
 package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.PenaltyDAO;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
-import lk.ijse.Micro_Finance_Management_System.entity.Expense;
 import lk.ijse.Micro_Finance_Management_System.entity.Penalty;
 import lk.ijse.Micro_Finance_Management_System.util.SQLUtil;
 

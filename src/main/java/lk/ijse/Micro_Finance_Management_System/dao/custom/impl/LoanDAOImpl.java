@@ -129,10 +129,5 @@ public class LoanDAOImpl implements LoanDAO {
     @Override
     public boolean insertCustomerLoan(int loanId, String customerId, String formattedCurrentDate, String formattedDueDate, double totalAmountToPay) throws SQLException {
         return SQLUtil.sql("INSERT INTO Customer_Loan (Loan_Id, Customer_Id, Date_Issued, Date_Due, Payment_Status, Total_Amount_To_Pay) VALUES (?, ?, ?, ?, 'Placed', ?)", loanId, customerId, formattedCurrentDate, formattedDueDate, totalAmountToPay);
-
-         /*@Override
-    public int getInsertedLoanId() {
-        return insertedLoanId;
-    }*/
     }
 }

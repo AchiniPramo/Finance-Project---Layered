@@ -2,7 +2,6 @@ package lk.ijse.Micro_Finance_Management_System.bo.custom;
 
 import lk.ijse.Micro_Finance_Management_System.bo.SuperBO;
 import lk.ijse.Micro_Finance_Management_System.dto.EmployeeDTO;
-import lk.ijse.Micro_Finance_Management_System.entity.Employee;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

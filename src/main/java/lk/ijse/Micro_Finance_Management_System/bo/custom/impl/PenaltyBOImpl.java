@@ -3,9 +3,7 @@ package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 import lk.ijse.Micro_Finance_Management_System.bo.custom.PenaltyBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.PenaltyDAO;
-import lk.ijse.Micro_Finance_Management_System.dto.ExpenseDTO;
 import lk.ijse.Micro_Finance_Management_System.dto.PenaltyDTO;
-import lk.ijse.Micro_Finance_Management_System.entity.Expense;
 import lk.ijse.Micro_Finance_Management_System.entity.Penalty;
 
 import java.sql.SQLException;

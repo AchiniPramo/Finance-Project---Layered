@@ -12,7 +12,6 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            //methana navigation class eke thina setprimarystage variable ekt pass krnwa login form ekt hdena stage eka
             Navigation.setPrimaryStage(primaryStage);
 
             Parent root = FXMLLoader.load(getClass().getResource("/view/login_form.fxml"));

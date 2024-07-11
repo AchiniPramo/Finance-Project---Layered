@@ -3,9 +3,7 @@ package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 import lk.ijse.Micro_Finance_Management_System.bo.custom.PaymentBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.PaymentDAO;
-import lk.ijse.Micro_Finance_Management_System.dto.CustomerDTO;
 import lk.ijse.Micro_Finance_Management_System.dto.PaymentDTO;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 import lk.ijse.Micro_Finance_Management_System.entity.Payment;
 
 import java.sql.SQLException;
@@ -59,5 +57,4 @@ public class PaymentBOImpl implements PaymentBO {
     public List<Integer> getAllPaymentIds() throws SQLException {
         return paymentDAO.geAllIntegerIds();
     }
-
 }

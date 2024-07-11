@@ -1,7 +1,5 @@
 package lk.ijse.Micro_Finance_Management_System.util;
 
-
-
 import lk.ijse.Micro_Finance_Management_System.db.DbConnection;
 
 import java.sql.Connection;

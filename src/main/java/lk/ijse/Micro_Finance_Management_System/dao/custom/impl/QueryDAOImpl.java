@@ -7,7 +7,6 @@ import lk.ijse.Micro_Finance_Management_System.util.SQLUtil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class QueryDAOImpl implements QueryDAO {
     @Override

@@ -2,7 +2,6 @@ package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.CollateralDAO;
 import lk.ijse.Micro_Finance_Management_System.entity.Collateral;
-import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 import lk.ijse.Micro_Finance_Management_System.util.SQLUtil;
 
 import java.sql.ResultSet;
@@ -15,19 +14,19 @@ import static lk.ijse.Micro_Finance_Management_System.util.SQLUtil.sql;
 public class CollateralDAOImpl implements CollateralDAO {
     @Override
     public ArrayList<Collateral> getAll() throws SQLException, ClassNotFoundException {
-            ArrayList<Collateral> allCollateral = new ArrayList<>();
-            ResultSet resultSet = SQLUtil.sql("SELECT * FROM Collateral");
-            while (resultSet.next()) {
-                Collateral collateral = new Collateral(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4)
-                );
-                allCollateral.add(collateral);
-            }
-            return allCollateral;
+        ArrayList<Collateral> allCollateral = new ArrayList<>();
+        ResultSet resultSet = SQLUtil.sql("SELECT * FROM Collateral");
+        while (resultSet.next()) {
+            Collateral collateral = new Collateral(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+            );
+            allCollateral.add(collateral);
         }
+        return allCollateral;
+    }
 
     @Override
     public boolean save(Collateral entity) throws SQLException, ClassNotFoundException {
@@ -36,7 +35,6 @@ public class CollateralDAOImpl implements CollateralDAO {
                 entity.getName(),
                 entity.getAddress(),
                 entity.getPhoneNumber());
-
     }
 
     @Override

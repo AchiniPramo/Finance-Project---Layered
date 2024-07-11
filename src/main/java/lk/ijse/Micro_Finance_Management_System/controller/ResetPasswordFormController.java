@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import lk.ijse.Micro_Finance_Management_System.bo.BOFactory;
 import lk.ijse.Micro_Finance_Management_System.bo.custom.UserBO;
 import lk.ijse.Micro_Finance_Management_System.dto.UserDTO;
-import lk.ijse.Micro_Finance_Management_System.util.GenarateCode;
+import lk.ijse.Micro_Finance_Management_System.util.GenerateCode;
 import lk.ijse.Micro_Finance_Management_System.util.Navigation;
 
 import java.sql.SQLException;
@@ -38,7 +38,7 @@ public class ResetPasswordFormController {
     @FXML
     void btnGetOTPOnAction(ActionEvent event) {
         // Generate the verification code
-        otpCode = GenarateCode.genarateCode();
+        otpCode = GenerateCode.generateCode();
 
         boolean emailSent = userBO.sendVerificationCodeByEmail(otpCode);
 

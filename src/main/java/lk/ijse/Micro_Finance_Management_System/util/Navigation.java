@@ -12,7 +12,6 @@ import lombok.Setter;
 import java.io.IOException;
 
 public class Navigation {
-
     @Setter
     private static Stage primaryStage;
 
@@ -31,14 +30,11 @@ public class Navigation {
 
     public static void navigateToDashboard() {
         try {
-            // Load both FXML files into their respective Parent objects
             Parent mainFormNode = FXMLLoader.load(Navigation.class.getResource("/view/dashboard_form.fxml"));
 
-            // Create a BorderPane to hold both forms
             BorderPane borderPane = new BorderPane();
-            borderPane.setCenter(mainFormNode); // Set mainform at the center or choose another position
+            borderPane.setCenter(mainFormNode);
 
-            // Set up the scene with the borderPane containing both nodes
             Scene scene = new Scene(borderPane);
 
             primaryStage.setScene(scene);
