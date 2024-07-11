@@ -1,4 +1,4 @@
-package lk.ijse.Micro_Finance_Management_System.dao.impl;
+package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.CollateralDAO;
 import lk.ijse.Micro_Finance_Management_System.entity.Collateral;
@@ -77,5 +77,10 @@ public class CollateralDAOImpl implements CollateralDAO {
     @Override
     public List<Integer> geAllIntegerIds() throws SQLException {
         return null;
+    }
+
+    @Override
+    public boolean updateCollateralLoan(String collateralId, int loanId) throws SQLException {
+        return SQLUtil.sql("INSERT INTO Collateral_Loan (Collateral_Id, Loan_Id) VALUES (?, ?)", collateralId, loanId);
     }
 }

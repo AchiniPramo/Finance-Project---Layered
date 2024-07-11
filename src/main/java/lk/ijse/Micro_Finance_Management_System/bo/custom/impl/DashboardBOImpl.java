@@ -1,5 +1,6 @@
-package lk.ijse.Micro_Finance_Management_System.bo.impl;
+package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 
+import javafx.scene.chart.XYChart;
 import lk.ijse.Micro_Finance_Management_System.bo.custom.DashboardBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.DashboardDAO;
@@ -21,5 +22,10 @@ public class DashboardBOImpl implements DashboardBO {
     @Override
     public int getLoanCount() throws SQLException,  ClassNotFoundException {
         return dashboardDAO.getLoanCount();
+    }
+
+    @Override
+    public XYChart.Series<String, Number> getBarChartData() throws SQLException {
+        return dashboardDAO.getBarChartData();
     }
 }

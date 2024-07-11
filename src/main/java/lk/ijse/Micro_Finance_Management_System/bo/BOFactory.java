@@ -1,12 +1,13 @@
 package lk.ijse.Micro_Finance_Management_System.bo;
 
-import lk.ijse.Micro_Finance_Management_System.bo.impl.*;
+import lk.ijse.Micro_Finance_Management_System.bo.custom.impl.*;
+import lk.ijse.Micro_Finance_Management_System.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
 
     public enum BOTypes {
-        USER, DASHBOARD, CUSTOMER, EMPLOYEE, LOAN, COLLATERAL, PAYMENT, EXPENSE, PENALTY
+        USER, DASHBOARD, CUSTOMER, EMPLOYEE, LOAN, COLLATERAL, PAYMENT, EXPENSE, PENALTY, FINANCIAL
     }
 
     private BOFactory() {
@@ -44,6 +45,9 @@ public class BOFactory {
 
             case PENALTY:
                 return new PenaltyBOImpl();
+
+            case FINANCIAL:
+                return new FinancialBOImpl();
 
             default:
                 return null;

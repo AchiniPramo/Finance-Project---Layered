@@ -1,4 +1,4 @@
-package lk.ijse.Micro_Finance_Management_System.bo.impl;
+package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 
 import javafx.scene.control.Alert;
 import lk.ijse.Micro_Finance_Management_System.bo.custom.UserBO;

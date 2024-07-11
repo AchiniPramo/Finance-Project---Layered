@@ -6,8 +6,8 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class EmailService {
-    private static final String SENDER_EMAIL = "chathuhiru45@gmail.com";
-    private static final String PASSWORD = "vhmz gqaj hmvf mjpa";
+    private static final String SENDER_EMAIL = "achinipramodhya4@gmail.com";
+    private static final String PASSWORD = "qezy qpgp dzdh jors";
 
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";

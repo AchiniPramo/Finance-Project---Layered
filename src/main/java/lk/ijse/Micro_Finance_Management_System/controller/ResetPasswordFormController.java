@@ -55,7 +55,7 @@ public class ResetPasswordFormController {
 
         if (enteredCode.equals(otpCode)) {
 
-            UserDTO userDTO = new UserDTO(null,txtUserId.getText(),txtUsername.getText());
+            UserDTO userDTO = new UserDTO(txtUserId.getText(),txtUsername.getText(), txtPassword.getText());
             userBO.resetPassword(userDTO);
             clearFields();
 

@@ -1,4 +1,4 @@
-package lk.ijse.Micro_Finance_Management_System.bo.impl;
+package lk.ijse.Micro_Finance_Management_System.bo.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.bo.custom.EmployeeBO;
 import lk.ijse.Micro_Finance_Management_System.dao.DAOFactory;

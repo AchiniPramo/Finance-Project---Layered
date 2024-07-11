@@ -1,4 +1,4 @@
-package lk.ijse.Micro_Finance_Management_System.dao.impl;
+package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
 import lk.ijse.Micro_Finance_Management_System.dao.custom.EmployeeDAO;
 import lk.ijse.Micro_Finance_Management_System.entity.Customer;

@@ -1,5 +1,6 @@
-package lk.ijse.Micro_Finance_Management_System.dao.impl;
+package lk.ijse.Micro_Finance_Management_System.dao.custom.impl;
 
+import javafx.scene.chart.XYChart;
 import lk.ijse.Micro_Finance_Management_System.dao.custom.DashboardDAO;
 import lk.ijse.Micro_Finance_Management_System.entity.Customer;
 import lk.ijse.Micro_Finance_Management_System.util.SQLUtil;
@@ -26,6 +27,28 @@ public class DashBoardDAOImpl implements DashboardDAO {
     public int getLoanCount() throws SQLException {
         ResultSet resultSet = SQLUtil.sql("SELECT COUNT(*) FROM Loan");
         return resultSet.next() ? resultSet.getInt(1) : 0;
+    }
+
+    @Override
+    public XYChart.Series<String, Number> getBarChartData() throws SQLException {
+        ResultSet resultSet = SQLUtil.sql("SELECT\n" +
+                "    CASE\n" +
+                "        WHEN Amount < 500 THEN 'Less than 500'\n" +
+                "        WHEN Amount BETWEEN 500 AND 999.99 THEN '500-999.99'\n" +
+                "        WHEN Amount BETWEEN 1000 AND 4999.99 THEN '1000-4999.99'\n" +
+                "        WHEN Amount BETWEEN 5000 AND 9999.99 THEN '5000-9999.99'\n" +
+                "        ELSE '10000 and above'\n" +
+                "    END AS AmountRange,\n" +
+                "    COUNT(*) AS LoanCount\n" +
+                "FROM Loan\n" +
+                "GROUP BY AmountRange;");
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        while (resultSet.next()) {
+            String propertyType = resultSet.getString("AmountRange");
+            int count = resultSet.getInt("LoanCount");
+            series.getData().add(new XYChart.Data<>(propertyType, count));
+        }
+        return series;
     }
 
     @Override
